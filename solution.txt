@@ -1,0 +1,94 @@
+Démarche à suivre pour résoudre le puzzle
+Auteur: zwyx
+Date: 02/03/08
+
+________________________________________
+
+I. Numérotation des cases de l'échiquier
+________________________________________
+
++-----+
+|B   B|
+|  0  |
+|B   B|
++-----+-----+-----+-----+
+|     |     |     |N   N|
+|  1  |  2  |  3  |  4  |
+|     |     |     |N   N|
++-----+-----+-----+-----+
+|B   B|N   N|     |
+|  5  |  6  |  7  |
+|B   B|N   N|     |
++-----+-----+-----+
+|     |     |
+|  8  |  9  |
+|     |     |
++-----+-----+
+
+________________________
+
+II. Mouvements possibles
+________________________
+
+Les cavaliers peuvent se déplacer comme dans le jeu des échecs.
+
+origine -> destinations
+
+0 -> 3, 6
+1 -> 7, 9
+2 -> 8
+3 -> 0, 5, 9
+4 -> 4
+5 -> 3
+6 -> 0, 4
+7 -> 1, 8
+8 -> 2, 7
+9 -> 1, 3
+
+__________________________________
+
+III. Transformation de l'échiquier
+__________________________________
+
+On redessine l'échiquier en considérant que les pions peuvent uniquement se déplacer sur une case limitrophe à la leur.
+
+                  +-----+
+                  |B   B|
+                  |  5  |
+                  |B   B|
++-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|N   N|N   N|B   B|     |     |     |     |     |     |
+|  4  |  6  |  0  |  3  |  9  |  1  |  7  |  8  |  2  |
+|N   N|N   N|B   B|     |     |     |     |     |     |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+
+
+____________
+
+IV. Solution
+____________
+
+Le puzzle est beaucoup plus simple à résoudre maintenant. En faisant abstraction du déplacement en "L" peu intuitif du cavalier, les mouvements à exécuter apparaissent évidents.
+Les pions noirs, initialement placés à gauche, sur les cases 4 et 6, doivent bouger vers la droite, sur les cases 8 et 2. En même temps, les pions blancs, initialement placés sur les cases 0 et 5, vont pouvoir se déplacer vers la gauche, en laissant passer les pions noirs vers la droite grâce à la case 5.
+On peut résumer les étapes à réaliser comme suit.
+
+pion blanc en 0 -> case 7 (4 mouvements)
+pion noir en 6 -> case 1 (4 mouvements)
+pion noir en 4 -> case 9 (4 mouvements)
+pion blanc en 5 -> case 4 (4 mouvements)
+pion noir en 9 -> case 6 (3 mouvements)
+pion noir en 1 -> case 0 (3 mouvements)
+pion blanc en 7 -> case 5 (4 mouvements)
+pion noir en 0 -> case 1 (3 mouvements)
+pion noir en 6 -> case 9 (3 mouvements)
+pion blanc en 5 -> case 6 (3 mouvements)
+pion noir en 9 -> case 0 (2 mouvements)
+pion noir en 1 -> case 5 (3 mouvements)
+
+On compte au total 40 déplacements à effectuer.
+
+___________
+
+V. Remarque
+___________
+
+Finalement, on constate que les cases 8 et 2 ne servent à rien pour résoudre le puzzle.
